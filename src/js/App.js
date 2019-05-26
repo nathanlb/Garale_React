@@ -5,11 +5,15 @@ import Sidebar from './components/Sidebar'
 
 function App() {
     return (
-        <div>
-          {/*<h3> Hello my room! </h3>*/}
-          {/*<PinCard />*/}
+        <div
+          style={{
+            height: '100%',
+            width: '100%',
+            top: '0px',
+            position: 'absolute',
+          }}>
           <Sidebar />
-          {/*<MapComponent />*/}
+          <MapComponent />
         </div>
     )
 }

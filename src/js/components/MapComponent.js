@@ -4,6 +4,7 @@ import Map, {Marker, GoogleApiWrapper} from 'google-maps-react'
 import MarkerList from './MarkerList'
 import Keys from '../secret'
 
+
 export class MapComponent extends Component {
 
   constructor() {
@@ -26,13 +27,14 @@ export class MapComponent extends Component {
   render() {
     return (
       <div 
-        style={{ 
+        style={{
           position: 'absolute',
           height: '100%',
           width: '100%',
-          left: '200px',
+          left: '50px',
           top: '0px',
-          float: 'right'
+          float: 'right',
+          zIndex: 1,
         }}>
         <Map
           google={this.props.google}
@@ -40,8 +42,9 @@ export class MapComponent extends Component {
           defaultZoom={ this.state.zoom }
           onDblclick={(t, map, c) => this.addMarker(c.latLng, map) }
           disableDoubleClickZoom={ true }
+          mapTypeControl={ false }
           >
-          <MarkerList markers={ this.state.markers }/>
+          <MarkerList markers={ this.state.markers} google={this.props.google}/>
         </Map>
       </div>
     )
@@ -50,4 +53,6 @@ export class MapComponent extends Component {
 
 export default GoogleApiWrapper({
   apiKey:Keys.GoogleAPIKey
-  })(MapComponent);
+})(MapComponent);
+
+//apiKey:Keys.GoogleAPIKey

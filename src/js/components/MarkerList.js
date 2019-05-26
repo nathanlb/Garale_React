@@ -13,8 +13,8 @@ class MarkerList extends Component {
       this.props.markers.map( (marker, index) =>
         <Marker
           key = {index}
-          lat = {marker.lat}
-          lng = {marker.lng}
+          position = {marker}
+          animation={this.props.google.maps.Animation.DROP}
           {...this.props}
         />
       )
