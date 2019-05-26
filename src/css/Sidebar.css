@@ -1,0 +1,62 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+        
+#home {
+    --first-color: #f4427a;
+    /*--second-color: #41f4b5;*/
+    --second-color: #f4e767;
+    --light-gray: lightgray;
+}
+.navbar {
+    padding: 0;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+}
+#offcanvas-left{
+    flex: 0 0 280px;
+    height: 100%;
+    background-color: #111;
+    color: white;
+    transition-duration: .5s;
+}
+#offcanvas-left.hide {
+    margin-left: -280px;
+}
+.togglebar {
+    background-color: #232323;
+    flex: 0 0;
+    height: 100%;
+    min-width: 50px;
+    max-width: 5px;
+}
+.toggle i {
+    height: 80px;
+    font-size: 1.4em;
+    width: 100%;
+    color: var(--first-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+}
+.toggle i:hover {
+    color: var(--second-color);
+}
+#offcanvas-left ul {
+    padding: 0
+}
+#offcanvas-left ul li{
+    color: white;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    padding: 10px; 
+    border-bottom: 1px solid #222
+}
+#offcanvas-left a{
+    color: white;
+    text-decoration: none;
+}
+#offcanvas-left li:hover a {
+    color: var(--first-color);
+}

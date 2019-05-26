@@ -1,0 +1,9 @@
+html,body, #root {
+  padding: 0;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+body {
+  display: flex;
+}
