@@ -22,14 +22,7 @@ export default class MapSearchBox extends React.Component {
   }
   render() {
     return (
-      <div
-        id="places-search-wrapper"
-        style={{
-          top: '0px',
-          position: 'absolute',
-          zIndex: 3
-        }}>
-      >
+      <div id="places-search-wrapper">
         <input id="places-search" ref="input" {...this.props} type="text"/>
       </div>
     )
