@@ -1,94 +1,37 @@
-import React, { Component } from 'react';
-import Map, { Marker } from '../../src/index';
-import '../../css/MapSearchBox.css';
+import React from 'react';
 
-class Contents extends Component {
+import '../../css/MapSearchBox.css'
 
-  constructor() {
-    state = {
-      position: null
+export default class MapSearchBox extends React.Component {
+
+  constructor(){
+    super()
+  }
+  onPlacesChanged = () => {
+    if (this.props.onPlacesChanged) {
+      this.props.onPlacesChanged(this.searchBox.getPlaces());
     }
   }
-
   componentDidMount() {
-    this.renderAutoComplete();
+    var input = this.refs.input;
+    this.searchBox = new this.props.google.maps.places.SearchBox(input);
+    this.searchBox.addListener('places_changed', this.onPlacesChanged);
   }
-
-  componentDidUpdate(prevProps) {
-    if (this.props !== prevProps.map) this.renderAutoComplete();
+  componentWillUnmount() {
+    this.searchBox.removeListener('places_changed', this.onPlacesChanged);
   }
-
-  onSubmit(e) {
-    e.preventDefault();
-  }
-
-  renderAutoComplete() {
-    const { google, map } = this.props;
-
-    if (!google || !map) return;
-
-    const autocomplete = new google.maps.places.Autocomplete(this.autocomplete);
-    autocomplete.bindTo('bounds', map);
-
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
-
-      if (!place.geometry) return;
-
-      if (place.geometry.viewport) map.fitBounds(place.geometry.viewport);
-      else {
-        map.setCenter(place.geometry.location);
-        map.setZoom(17);
-      }
-
-      this.setState({ position: place.geometry.location });
-    });
-  }
-
   render() {
-    const { position } = this.state;
-
     return (
-      <div className="flexWrapper">
-        <div className="left">
-          <form onSubmit={this.onSubmit}>
-            <input
-              placeholder="Enter a location"
-              ref={ref => (this.autocomplete = ref)}
-              type="text"
-            />
-
-            <input type="submit" value="Go" />
-          </form>
-
-          <div>
-            <div>Lat: {position && position.lat()}</div>
-            <div>Lng: {position && position.lng()}</div>
-          </div>
-        </div>
-
-        <div className="right">
-          <Map
-            {...this.props}
-            center={position}
-            centerAroundCurrentLocation={false}
-            containerStyle={{
-              height: '100vh',
-              position: 'relative',
-              width: '100%'
-            }}>
-            <Marker position={position} />
-          </Map>
-        </div>
+      <div
+        id="places-search-wrapper"
+        style={{
+          top: '0px',
+          position: 'absolute',
+          zIndex: 3
+        }}>
+      >
+        <input id="places-search" ref="input" {...this.props} type="text"/>
       </div>
-    );
+    )
   }
 }
-
-const MapWrapper = props => (
-  <Map className="map" google={props.google} visible={false}>
-    <Contents {...props} />
-  </Map>
-);
-
-export default MapWrapper;

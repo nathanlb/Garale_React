@@ -9,10 +9,10 @@ class Sidebar extends React.Component {
       "showHideSidebar"  : "hide"
     }
 
-    this.toggleNavbar = this.toggleNavbar.bind(this)
+    this.toggleNavbar = this.toggleSidebar.bind(this)
   }
 
-  toggleNavbar() {
+  toggleSidebar() {
     var css = (this.state.showHideSidebar === "hide") ? "" : "hide"
     this.setState({"showHideSidebar":css})
   }
