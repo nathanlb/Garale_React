@@ -8,11 +8,11 @@ export default class MapSearchBox extends React.Component {
     super()
   }
   onPlacesChanged = () => {
-    if (this.props.onPlacesChanged) {
-      this.props.onPlacesChanged(this.searchBox.getPlaces());
-    }
+    console.log(this.searchBox.getPlaces())
+    this.props.updateCenter(this.searchBox.getPlaces()[0].geometry.location)
   }
   componentDidMount() {
+    console.log(this.props.center)
     var input = this.refs.input;
     this.searchBox = new this.props.google.maps.places.SearchBox(input);
     this.searchBox.addListener('places_changed', this.onPlacesChanged);
