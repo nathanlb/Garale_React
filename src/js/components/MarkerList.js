@@ -8,7 +8,6 @@ class MarkerList extends Component {
   }
 
   render() {
-    console.log(this.props.markers)
     return (
       this.props.markers.map( (marker, index) =>
         <Marker

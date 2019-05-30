@@ -13,21 +13,45 @@ export class MapComponent extends Component {
     this.state = {
       center: { lat: 37.3596049, lng: -122.0665 },
       zoom: 11,
+      newMarker: null,
       markers: []
     }
 
     this.addMarker = this.addMarker.bind(this)
     this.updateCenter = this.updateCenter.bind(this)
+    this.positionNewMarker = this.positionNewMarker.bind(this)
+
+    // Conditional components
+    this.newMarker = this.newMarker.bind(this)
   }
 
-  addMarker = (location, map) => {
+  componentDidMount() {
+    this.map = this.refs.map
+  }
+
+  addMarker = (position, map) => {
     this.setState( prevState => ({
-      markers: [...prevState.markers, {lat: location.lat(), lng: location.lng()}]
+      markers: [...prevState.markers, {lat: position.lat(), lng: position.lng()}]
     }))
   }
 
-  updateCenter = (position) => {
-    this.setState({center: position})
+  updateCenter = (position) => { 
+    this.setState({center: position}) 
+    this.positionNewMarker(position)
+  }
+
+  positionNewMarker = (position, map) => { this.setState({newMarker: {lat: position.lat(), lng: position.lng()}}) }
+
+  newMarker = () => {
+    const nm = this.state.newMarker
+    if (nm) {
+      return (
+        <Marker
+          position = { this.state.newMarker }
+          animation = { this.props.google.maps.Animation.DROP }
+          draggable = { true }
+        />)
+    }
   }
 
   render() {
@@ -37,21 +61,25 @@ export class MapComponent extends Component {
           position: 'absolute',
           height: '100%',
           width: '100%',
-          left: '50px',
+          left: '0px',
           top: '0px',
           float: 'right',
           zIndex: 1,
         }}>
-        <MapSearchBox google={ this.props.google } updateCenter={ this.updateCenter }/>
+        <MapSearchBox google={ this.props.google } updatecenter={ this.updateCenter } sideBarOpen={ this.props.sideBarOpen }/>
         <Map
-          google={this.props.google}
+          ref="map"
+          google={ this.props.google }
           defaultCenter={ this.state.center }
-          center={this.state.center}
+          center={ this.state.center }
           defaultZoom={ this.state.zoom }
-          onDblclick={(t, map, c) => this.addMarker(c.latLng, map) }
+          onDblclick={ (t, map, c) => this.positionNewMarker(c.latLng) }
           disableDoubleClickZoom={ true }
           mapTypeControl={ false }
+          streetViewControl={ false }
+          fullscreenControl={ false }
           >
+          { this.newMarker() }
           <MarkerList
             markers={ this.state.markers }
             google={ this.props.google }/>

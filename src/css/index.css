@@ -7,3 +7,16 @@ html,body, #root {
 body {
   display: flex;
 }
+
+html, body, #root { 
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  margin: 0px;
+  background-color: #232323;
+}
+
+#root {
+  display: flex;
+  flex-direction: row
+}

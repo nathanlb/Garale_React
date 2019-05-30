@@ -13,8 +13,11 @@ class Sidebar extends React.Component {
   }
 
   toggleSidebar() {
-    var css = (this.state.showHideSidebar === "hide") ? "" : "hide"
+    const css = (this.state.showHideSidebar === "hide") ? "" : "hide"
     this.setState({"showHideSidebar":css})
+    
+    const state = (css === "hide") ? false : true
+    this.props.setSidebarState(state)
   }
 
   render() {
