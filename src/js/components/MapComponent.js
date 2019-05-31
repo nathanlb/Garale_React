@@ -4,6 +4,7 @@ import Map, {Marker, GoogleApiWrapper} from 'google-maps-react'
 import MarkerList from './MarkerList'
 import MapSearchBox from './MapSearchBox'
 import Keys from '../secret'
+import mapStyles from '../../json/mapStyles'
 
 
 export class MapComponent extends Component {
@@ -11,11 +12,14 @@ export class MapComponent extends Component {
   constructor() {
     super()
     this.state = {
-      center: { lat: 37.3596049, lng: -122.0665 },
-      zoom: 11,
+      center: { lat: 45.4856441, lng: -73.5792103 },
+      zoom: 18,
       newMarker: null,
-      markers: []
     }
+
+    this.defaultMapOptions = {
+      styles: mapStyles
+    };
 
     this.addMarker = this.addMarker.bind(this)
     this.updateCenter = this.updateCenter.bind(this)
@@ -36,11 +40,11 @@ export class MapComponent extends Component {
   }
 
   updateCenter = (position) => { 
-    this.setState({center: position}) 
+    this.setState({center: {lat: position.lat(), lng: position.lng()}}) 
     this.positionNewMarker(position)
   }
 
-  positionNewMarker = (position, map) => { this.setState({newMarker: {lat: position.lat(), lng: position.lng()}}) }
+  positionNewMarker = (position) => { this.setState({newMarker: {lat: position.lat(), lng: position.lng()}}) }
 
   newMarker = () => {
     const nm = this.state.newMarker
@@ -67,10 +71,11 @@ export class MapComponent extends Component {
           zIndex: 1,
         }}>
         <MapSearchBox google={ this.props.google } updatecenter={ this.updateCenter } sideBarOpen={ this.props.sideBarOpen }/>
+        {console.log(this.state.center)}
         <Map
           ref="map"
           google={ this.props.google }
-          defaultCenter={ this.state.center }
+          initialCenter={ this.state.center }
           center={ this.state.center }
           defaultZoom={ this.state.zoom }
           onDblclick={ (t, map, c) => this.positionNewMarker(c.latLng) }
@@ -78,10 +83,10 @@ export class MapComponent extends Component {
           mapTypeControl={ false }
           streetViewControl={ false }
           fullscreenControl={ false }
+          defaultOptions={ this.defaultMapOptions }
           >
           { this.newMarker() }
           <MarkerList
-            markers={ this.state.markers }
             google={ this.props.google }/>
         </Map>
       </div>
