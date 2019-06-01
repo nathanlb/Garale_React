@@ -71,7 +71,6 @@ export class MapComponent extends Component {
           zIndex: 1,
         }}>
         <MapSearchBox google={ this.props.google } updatecenter={ this.updateCenter } sideBarOpen={ this.props.sideBarOpen }/>
-        {console.log(this.state.center)}
         <Map
           ref="map"
           google={ this.props.google }
