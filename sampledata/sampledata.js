@@ -1,0 +1,84 @@
+export default [
+    {
+        title: "Breathe: Community Yoga",
+        description: "This class is the best free way to start your morning with a clear mind and ready body",
+        start: "2019-06-01T07:00:00",
+        end: "2019-06-01T08:00:00",
+        coord: {"lat": 45.4856441, "lng": -73.5792103},
+        category: "Fitness",
+        photos: "sampledata/img/yoga1.jpg"
+    },
+    {
+        title: "Flexifit: Community Yoga",
+        description: "Like yoga but want to sleep in a little? Come to this thing!",
+        date: "",
+        start: "2019-06-01T09:00:00",
+        end: "2019-06-01T10:00:00",
+        coord: {"lat": 45.4831707, "lng": 73.5707794},
+        category: "Fitness",
+        photos: "sampledata/img/yoga2.jpg"
+    },
+    {
+        title: "Cry: Intense Yoga",
+        description: "Come join a full class of masochists and exert your ligaments one by one!",
+        start: "2019-06-01T19:00:00",
+        end: "2019-06-01T22:00:00",
+        coord: {"lat": 45.4784257, "lng": -73.585204},
+        category: "Fitness",
+        photos: "sampledata/img/yoga1.jpg"
+    },
+    {
+        title: "Inspire - Gallery Opening!",
+        description: "It's art, fam. You either get it or you don't. Come not get it at our opening!",
+        start: "2019-06-01T18:00:00",
+        end: "2019-06-01T22:00:00",
+        coord: {"lat": 45.4833608, "lng": -73.5820352},
+        category: "Culture",
+        photos: "sampledata/img/gallery1.jpg"
+    },
+    {
+        title: "P.Beasly - New Collection",
+        description: "This art is the prettiest art... of all the art.",
+        start: "2019-06-01T18:00:00",
+        end: "2019-06-01T21:00:00",
+        coord: {"lat": 45.4874586, "lng": -73.5775969},
+        category: "Culture",
+        photos: "sampledata/img/beasly.jpg"
+    },
+    {
+        title: "Le Jeune Engagé : Campagne 2019 ",
+        description: "Huile de palme = Mauvais",
+        start: "2019-06-01T15:00:00",
+        end: "2019-06-01T19:00:00",
+        coord: {"lat": 45.4833608, "lng": -73.5820352},
+        category: "Environmental",
+        photos: "sampledata/img/gallery1.jpg"
+    },
+    {
+        title: "Vente de Garage des Musks",
+        description: "Vien 2e \"R\" nos trucs!",
+        start: "2019-06-01T10:00:00",
+        end: "2019-06-01T14:00:00",
+        coord: {"lat": 45.4837879, "lng": -73.575537},
+        category: "Environmental",
+        photos: "sampledata/img/gallery1.jpg"
+    },
+    {
+        title: "Open Air Pub - McGill",
+        description: "Vien 2e \"R\" nos trucs! Open 14h - 22h",
+        start: "2019-06-01T14:00:00",
+        end: "2019-06-10T22:00:00",
+        coord: {"lat": 45.4994618, "lng": -73.5716746},
+        category: "Food&Drink",
+        photos: "sampledata/img/oap.jpg"
+    },
+    {
+        title: "KDTruck",
+        description: "Best food truc in MTL! Only day-old Kraft Dinner out of the pan you stuck in the fridge.",
+        start: "2019-06-01T14:00:00",
+        end: "2019-06-01T22:00:00",
+        coord: {"lat": 45.4875488, "lng": -73.5737345},
+        category: "Food&Drink",
+        photos: "sampledata/img/foodtruck.jpg"
+    }
+]
