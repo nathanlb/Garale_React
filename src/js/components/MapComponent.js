@@ -70,7 +70,10 @@ export class MapComponent extends Component {
           float: 'right',
           zIndex: 1,
         }}>
-        <MapSearchBox google={ this.props.google } updatecenter={ this.updateCenter } sideBarOpen={ this.props.sideBarOpen }/>
+        <MapSearchBox 
+          google={ this.props.google }
+          updatecenter={ this.updateCenter }
+          sideBarOpen={ this.props.sideBarOpen }/>
         <Map
           ref="map"
           google={ this.props.google }
@@ -82,8 +85,7 @@ export class MapComponent extends Component {
           mapTypeControl={ false }
           streetViewControl={ false }
           fullscreenControl={ false }
-          defaultOptions={ this.defaultMapOptions }
-          >
+          defaultOptions={ this.defaultMapOptions }>
           { this.newMarker() }
           <MarkerList google={ this.props.google }/>
         </Map>

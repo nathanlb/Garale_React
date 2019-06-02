@@ -20,7 +20,7 @@
     display: inline-flex;
 }
 #offcanvas-left{
-    flex: 0 0 400px;
+    flex: 0 0 550px;
     height: 100%;
     background-color: #111;
     color: white;
@@ -29,7 +29,7 @@
     opacity: .90
 }
 #offcanvas-left.hide {
-    margin-left: -400px;
+    margin-left: -550px;
 }
 .togglebar {
     background-color: #232323;

@@ -4,9 +4,9 @@ export default [
         description: "This class is the best free way to start your morning with a clear mind and ready body",
         start: "2019-06-01T07:00:00",
         end: "2019-06-01T08:00:00",
-        coord: {"lat": 45.4856441, "lng": -73.5792103},
+        coord: {"lat": 45.524930, "lng": -73.581966},
         category: "Fitness",
-        photos: "sampledata/img/yoga1.jpg"
+        photo: "../../../sampledata/img/yoga1.jpg"
     },
     {
         title: "Flexifit: Community Yoga",
@@ -15,7 +15,7 @@ export default [
         end: "2019-06-01T10:00:00",
         coord: {"lat": 45.4831707, "lng": -73.5707794},
         category: "Fitness",
-        photos: "sampledata/img/yoga2.jpg"
+        photo: "../../../sampledata/img/yoga2.jpg"
     },
     {
         title: "Cry: Intense Yoga",
@@ -24,7 +24,7 @@ export default [
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4784257, "lng": -73.585204},
         category: "Fitness",
-        photos: "sampledata/img/yoga1.jpg"
+        photo: "../../../sampledata/img/yoga1.jpg"
     },
     {
         title: "Cinema dans le parc - Pierre et le loup",
@@ -33,7 +33,7 @@ export default [
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4879, "lng": -73.5845047},
         category: "Entertainment",
-        photos: "sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/gallery1.jpg"
     },
     {
         title: "Atelier d'impro Gratuit!",
@@ -42,7 +42,7 @@ export default [
         end: "2019-06-01T20:00:00",
         coord: {"lat": 45.4879602, "lng": -73.5730893},
         category: "Entertainment",
-        photos: "sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/gallery1.jpg"
     },
     {
         title: "P.Beasly - New Collection",
@@ -51,7 +51,7 @@ export default [
         end: "2019-06-01T21:00:00",
         coord: {"lat": 45.4874586, "lng": -73.5775969},
         category: "Culture",
-        photos: "sampledata/img/beasly.jpg"
+        photo: "../../../sampledata/img/beasly.jpg"
     },
     {
         title: "Inspire - Gallery Opening!",
@@ -60,7 +60,7 @@ export default [
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4864608, "lng": -73.5824352},
         category: "Culture",
-        photos: "sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/gallery1.jpg"
     },
     {
         title: "Le Jeune Engagé : Campagne 2019 ",
@@ -69,7 +69,7 @@ export default [
         end: "2019-06-01T19:00:00",
         coord: {"lat": 45.4833608, "lng": -73.5820352},
         category: "Environmental",
-        photos: "sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/gallery1.jpg"
     },
     {
         title: "Vente de Garage des Musks",
@@ -78,7 +78,7 @@ export default [
         end: "2019-06-01T14:00:00",
         coord: {"lat": 45.4837879, "lng": -73.575537},
         category: "Environmental",
-        photos: "sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/gallery1.jpg"
     },
     {
         title: "Open Air Pub - McGill",
@@ -87,7 +87,7 @@ export default [
         end: "2019-06-10T22:00:00",
         coord: {"lat": 45.4994618, "lng": -73.5716746},
         category: "Food&Drink",
-        photos: "sampledata/img/oap.jpg"
+        photo: "../../../sampledata/img/oap.jpg"
     },
     {
         title: "KDTruck",
@@ -96,6 +96,6 @@ export default [
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4875488, "lng": -73.5737345},
         category: "Food&Drink",
-        photos: "sampledata/img/foodtruck.jpg"
+        photo: "../../../sampledata/img/foodtruck.jpg"
     }
 ]

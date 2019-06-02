@@ -1,0 +1,14 @@
+.event-list{
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.event-list::-webkit-scrollbar {
+  background-color: #111;
+}
+.event-list::-webkit-scrollbar-thumb {
+  background-color: #222;
+}
+.event-list::-webkit-scrollbar-track {
+  background-color: #000;
+}

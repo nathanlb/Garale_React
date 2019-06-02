@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import '../../css/MapSearchBox.css'
 
-export default class MapSearchBox extends React.Component {
+export default class MapSearchBox extends Component {
 
   constructor(){
     super()
@@ -27,7 +27,9 @@ export default class MapSearchBox extends React.Component {
 
   showHideSearchBox() {
     if (this.props.sideBarOpen){
-      return ({ visibility: "hidden"})
+      return ({ visibility: "hidden",
+                opacity: "0",
+                transition: "visibility 0s 0.2s, opacity 0.2s linear"})
     }
   }
 

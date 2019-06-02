@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
+
+import EventList from './EventList'
 import '../../css/Sidebar.css'
 
-class Sidebar extends React.Component {
+export default class Sidebar extends Component {
 
   constructor(){
     super()
@@ -26,11 +28,7 @@ class Sidebar extends React.Component {
         <div id="navbar">
           <div id="offcanvas-left" className={this.state.showHideSidebar}>
             {/* Add navbar components here */}
-            <ul>
-                <li><a href="#" >Item 1 </a></li>
-                <li><a href="#" >Item 2 </a></li>
-                <li><a href="#" >Item 3 </a></li>
-            </ul>
+            <EventList />
           </div>
           <div className="togglebar">
               <div className="toggle" onClick={this.toggleNavbar}>
@@ -42,5 +40,3 @@ class Sidebar extends React.Component {
     )
   }
 }
-
-export default Sidebar
