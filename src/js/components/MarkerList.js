@@ -10,10 +10,15 @@ class MarkerList extends Component {
       "Fitness": "../../../img/fitness_pin.png",
       "Environmental": "../../../img/eco_pin.png",
       "Food&Drink": "../../../img/drinks_pin.png",
-      "Entertainment": "../../../img/entertainment.png"
+      "Entertainment": "../../../img/entertainment_pin.png",
+      "Culture": "../../../img/culture_pin.png"
     }
 
     this.getEvents = this.getEvents.bind(this)
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return this.props !== nextProps
   }
 
   getEvents() {
@@ -27,11 +32,10 @@ class MarkerList extends Component {
         <Marker
           key = { index }
           position = { event.coord }
-          animation = {this.props.google.maps.Animation.DROP}
           icon = {{
             url: this.icons[event.category],
             scaledSize: new google.maps.Size(35, 50)
-           }}
+          }}
           {...this.props}
         />
       )

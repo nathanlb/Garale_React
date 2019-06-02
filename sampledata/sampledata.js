@@ -11,10 +11,9 @@ export default [
     {
         title: "Flexifit: Community Yoga",
         description: "Like yoga but want to sleep in a little? Come to this thing!",
-        date: "",
         start: "2019-06-01T09:00:00",
         end: "2019-06-01T10:00:00",
-        coord: {"lat": 45.4831707, "lng": 73.5707794},
+        coord: {"lat": 45.4831707, "lng": -73.5707794},
         category: "Fitness",
         photos: "sampledata/img/yoga2.jpg"
     },
@@ -28,12 +27,21 @@ export default [
         photos: "sampledata/img/yoga1.jpg"
     },
     {
-        title: "Inspire - Gallery Opening!",
-        description: "It's art, fam. You either get it or you don't. Come not get it at our opening!",
-        start: "2019-06-01T18:00:00",
+        title: "Cinema dans le parc - Pierre et le loup",
+        description: "Representation gratuite du film d'apres l'oeuvre.",
+        start: "2019-06-01T20:00:00",
         end: "2019-06-01T22:00:00",
-        coord: {"lat": 45.4833608, "lng": -73.5820352},
-        category: "Culture",
+        coord: {"lat": 45.4879, "lng": -73.5845047},
+        category: "Entertainment",
+        photos: "sampledata/img/gallery1.jpg"
+    },
+    {
+        title: "Atelier d'impro Gratuit!",
+        description: "Like an improv conversation... an improversation.",
+        start: "2019-06-01T18:00:00",
+        end: "2019-06-01T20:00:00",
+        coord: {"lat": 45.4879602, "lng": -73.5730893},
+        category: "Entertainment",
         photos: "sampledata/img/gallery1.jpg"
     },
     {
@@ -44,6 +52,15 @@ export default [
         coord: {"lat": 45.4874586, "lng": -73.5775969},
         category: "Culture",
         photos: "sampledata/img/beasly.jpg"
+    },
+    {
+        title: "Inspire - Gallery Opening!",
+        description: "It's art, fam. You either get it or you don't. Come not get it at our opening!",
+        start: "2019-06-01T18:00:00",
+        end: "2019-06-01T22:00:00",
+        coord: {"lat": 45.4864608, "lng": -73.5824352},
+        category: "Culture",
+        photos: "sampledata/img/gallery1.jpg"
     },
     {
         title: "Le Jeune Engagé : Campagne 2019 ",

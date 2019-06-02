@@ -85,8 +85,7 @@ export class MapComponent extends Component {
           defaultOptions={ this.defaultMapOptions }
           >
           { this.newMarker() }
-          <MarkerList
-            google={ this.props.google }/>
+          <MarkerList google={ this.props.google }/>
         </Map>
       </div>
     )
