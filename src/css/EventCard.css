@@ -2,18 +2,24 @@
   height: 130px;
   background-color: #232323;
 }
+.card:hover{
+  background-color: #313131;
+}
 .card-image{
   object-fit: cover;
   width: 120px;
-  height: 148px;
-  padding: 8px
+  height: 128px;
+  padding: 8px;
 }
 .card-info-wrapper{
   position: absolute;
-  left: 125px
+  left: 120px;
+  padding: 8px;
 }
 .card-title{
   font-size: 20px;
+  margin: 0px;
+  padding: 0px;
 }
 .card-description{
   font-size: 15px;

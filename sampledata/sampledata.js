@@ -42,7 +42,7 @@ export default [
         end: "2019-06-01T20:00:00",
         coord: {"lat": 45.4879602, "lng": -73.5730893},
         category: "Entertainment",
-        photo: "../../../sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/theater.jpg"
     },
     {
         title: "P.Beasly - New Collection",
@@ -69,7 +69,7 @@ export default [
         end: "2019-06-01T19:00:00",
         coord: {"lat": 45.4833608, "lng": -73.5820352},
         category: "Environmental",
-        photo: "../../../sampledata/img/gallery1.jpg"
+        photo: "../../../sampledata/img/tree.jpg"
     },
     {
         title: "Vente de Garage des Musks",
@@ -82,7 +82,7 @@ export default [
     },
     {
         title: "Open Air Pub - McGill",
-        description: "Vien 2e \"R\" nos trucs! Open 14h - 22h",
+        description: "Beers, Burgs, and Hot durgs",
         start: "2019-06-01T14:00:00",
         end: "2019-06-10T22:00:00",
         coord: {"lat": 45.4994618, "lng": -73.5716746},

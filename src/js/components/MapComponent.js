@@ -6,7 +6,6 @@ import MapSearchBox from './MapSearchBox'
 import Keys from '../secret'
 import mapStyles from '../../json/mapStyles'
 
-
 export class MapComponent extends Component {
 
   constructor() {
@@ -16,10 +15,6 @@ export class MapComponent extends Component {
       zoom: 18,
       newMarker: null,
     }
-
-    this.defaultMapOptions = {
-      styles: mapStyles
-    };
 
     this.addMarker = this.addMarker.bind(this)
     this.updateCenter = this.updateCenter.bind(this)
@@ -85,7 +80,7 @@ export class MapComponent extends Component {
           mapTypeControl={ false }
           streetViewControl={ false }
           fullscreenControl={ false }
-          defaultOptions={ this.defaultMapOptions }>
+          styles={ mapStyles }>
           { this.newMarker() }
           <MarkerList google={ this.props.google }/>
         </Map>

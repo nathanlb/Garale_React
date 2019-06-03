@@ -34,3 +34,18 @@
 ::placeholder {
   color: rgba(168, 167, 167, 0.7);
 }
+
+.pac-container{
+  /*background-color: #353535;*/
+  background-color: #232323;
+  opacity: 0.9;
+  color: rgb(243, 243, 243);
+  border-radius: 5px;
+}
+
+.pac-item{
+  color: rgba(243, 243, 243, 0.7);
+}
+.pac-item-query{
+  color: rgb(243, 243, 243);
+}
