@@ -1,20 +1,44 @@
+@import url("colors.css");
+
 .card{
   height: 130px;
   background-color: #232323;
+  overflow: hidden;
 }
 .card:hover{
   background-color: #313131;
 }
+.card:hover .card-catband{
+  width: 10px;
+}
+.card:hover .card-info-wrapper{
+  left: 125px;
+}
+.card:hover .card-image{
+  left: 10px;
+}
+.card-catband{
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  overflow: hidden;
+  transition: width 0.1s linear;
+}
 .card-image{
+  position: absolute;
   object-fit: cover;
   width: 120px;
   height: 128px;
   padding: 8px;
+  left: 5px;
+  transition: left 0.1s linear;
 }
 .card-info-wrapper{
   position: absolute;
   left: 120px;
+  height: 100%;
   padding: 8px;
+  transition: left 0.1s linear;
 }
 .card-title{
   font-size: 20px;
@@ -25,10 +49,20 @@
   font-size: 15px;
   margin: 0;
   padding: 0;
-  padding-bottom: 5px
+  padding-bottom: 5px;
 }
-.card-date{
+.card-date-start{
+  position: absolute;
   margin: 0;
   padding: 0;
   font-size: 12px;
+  bottom: 4px;
+}
+.card-date-end{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  bottom: 4px;
+  left: 200px;
 }
