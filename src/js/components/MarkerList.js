@@ -38,6 +38,7 @@ class MarkerList extends Component {
       events.map( (event, index) =>
         <Marker
           key = { index }
+          name = { event.title }
           position = { event.coord }
           icon = {{
             url: this.icons[event.category],

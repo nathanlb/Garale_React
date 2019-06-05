@@ -24,7 +24,7 @@ export default [
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4784257, "lng": -73.585204},
         category: "Fitness",
-        photo: "../../../sampledata/img/yoga1.jpg"
+        photo: "../../../sampledata/img/yoga3.jpg"
     },
     {
         title: "Cinema dans le parc - Pierre et le loup",
