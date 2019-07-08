@@ -5,6 +5,7 @@ import MarkerList from './MarkerList'
 import MapSearchBox from './MapSearchBox'
 import Keys from '../secret'
 import mapStyles from '../../json/mapStyles'
+import MarkerInfoWindow from './MarkerInfoWindow';
 
 export class MapComponent extends Component {
 
@@ -14,11 +15,15 @@ export class MapComponent extends Component {
       center: { lat: 45.4856441, lng: -73.5792103 },
       zoom: 18,
       newMarker: null,
+      activeMarker: {},
+      showInfoWindow: false,
     }
 
     this.addMarker = this.addMarker.bind(this)
     this.updateCenter = this.updateCenter.bind(this)
     this.positionNewMarker = this.positionNewMarker.bind(this)
+    this.onMarkerClick = this.onMarkerClick.bind(this)
+    this.onMapClicked = this.onMapClicked.bind(this)
 
     // Conditional components
     this.newMarker = this.newMarker.bind(this)
@@ -37,6 +42,22 @@ export class MapComponent extends Component {
   updateCenter = (position) => { 
     this.setState({center: {lat: position.lat(), lng: position.lng()}}) 
     this.positionNewMarker(position)
+  }
+
+  onMarkerClick = (marker, e) => {
+    this.setState({
+      activeMarker: marker,
+      showInfoWindow: true,
+    })
+    this.props.setAppState( {selectedEvent: marker.event} )
+  }
+
+  onMapClicked = () => {
+    this.setState({
+      activeMarker: null,
+      showInfoWindow: false,
+    })
+    this.props.setAppState( {selectedEvent: null} )
   }
 
   positionNewMarker = (position) => { this.setState({newMarker: {lat: position.lat(), lng: position.lng()}}) }
@@ -64,6 +85,7 @@ export class MapComponent extends Component {
           top: '0px',
           float: 'right',
           zIndex: 1,
+          overflowY: 'none',
         }}>
         <MapSearchBox 
           google={ this.props.google }
@@ -75,6 +97,7 @@ export class MapComponent extends Component {
           initialCenter={ this.state.center }
           center={ this.state.center }
           defaultZoom={ this.state.zoom }
+          onClick={ this.onMapClicked }
           onDblclick={ (t, map, c) => this.positionNewMarker(c.latLng) }
           disableDoubleClickZoom={ true }
           mapTypeControl={ false }
@@ -82,7 +105,8 @@ export class MapComponent extends Component {
           fullscreenControl={ false }
           styles={ mapStyles }>
           { this.newMarker() }
-          <MarkerList google={ this.props.google }/>
+          <MarkerList google={ this.props.google } events={ this.props.events} onClick={ this.onMarkerClick }/>
+          <MarkerInfoWindow marker={ this.activeMarker } visible={ this.showInfoWindow } selectedEvent={ this.props.selectedEvent }/>
         </Map>
       </div>
     )

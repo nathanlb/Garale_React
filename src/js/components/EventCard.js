@@ -23,16 +23,16 @@ export default class EventCard extends Component {
 
   render() {
     return(
-        <div className="card">
-          <div className="card-catband" style={ {backgroundColor: this.colors[this.props.event.category]} }/>
-          <img className="card-image" src={this.props.event.photo}/>
-          <div className="card-info-wrapper">
-            <p className="card-title"> {this.props.event.title} </p>
-            <p className="card-description"> {this.props.event.description} </p>
-            <p className="card-date-start"> <b>Start:</b> {this.readableTimestamp(this.props.event.start)}</p>
-            <p className="card-date-end"> <b>End:</b> {this.readableTimestamp(this.props.event.end)}</p>
-          </div>
+      <div className="card">
+        <div className="card-catband" style={ {backgroundColor: this.colors[this.props.event.category]} }/>
+        <img className="card-image" src={this.props.event.photo}/>
+        <div className="card-info-wrapper">
+          <p className="card-title"> {this.props.event.title} </p>
+          <p className="card-description"> {this.props.event.description} </p>
+          <p className="card-date-start"> <b>Start:</b> {this.readableTimestamp(this.props.event.start)}</p>
+          <p className="card-date-end"> <b>End:</b> {this.readableTimestamp(this.props.event.end)}</p>
         </div>
+      </div>
     )
   }
 }

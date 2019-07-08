@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 import EventCard from './EventCard'
-import Events from '../../../sampledata/sampledata'
 
 import '../../css/EventList.css'
 
@@ -12,9 +11,10 @@ export default class EventList extends Component {
   }
 
   render() {
+    const events = this.props.events
     return (
       <ul className="event-list" >
-        {Events.map( (event, index) =>
+        {events.map( (event, index) =>
           <li key={index}><EventCard key={index} event={event}/></li>
         )}
       </ul>

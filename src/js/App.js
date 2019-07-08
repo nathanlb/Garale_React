@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PinCard from './components/PinCard'
 import MapComponent from './components/MapComponent'
 import Sidebar from './components/Sidebar'
+import EventFetcher from './components/EventFetcher';
 
 class App extends Component {
 
@@ -10,24 +11,33 @@ class App extends Component {
 
     this.state = {
       sideBarOpen: false,
+      events: [],
+      selectedEvent: null,
     }
+
+    this.eventFetcher = new EventFetcher()
+    this.setAppState = this.setAppState.bind(this)
   }
 
   setSidebarState = (state) => { this.setState( { sideBarOpen: state } )}
 
+  componentDidMount = () => this.setState( {events: this.eventFetcher.getEvents()} )
+
+  setAppState = (stateChange) => this.setState(stateChange)
+
   render() {
-      return (
-          <div
-            style={{
-              height: '100%',
-              width: '100%',
-              top: '0px',
-              position: 'absolute',
-            }}>
-            <Sidebar sideBarOpen={ this.state.sideBarOpen } setSidebarState={ this.setSidebarState }/>
-            <MapComponent sideBarOpen={ this.state.sideBarOpen }/>
-          </div>
-      )
+    return (
+      <div
+        style={{
+          height: '100%',
+          width: '100%',
+          top: '0px',
+          position: 'absolute',
+        }}>
+        <Sidebar sideBarOpen={ this.state.sideBarOpen } setSidebarState={ this.setSidebarState } events={ this.state.events } setAppState={ this.setAppState }/>
+        <MapComponent sideBarOpen={ this.state.sideBarOpen } events={ this.state.events } setAppState={ this.setAppState } selectedEvent={ this.state.selectedEvent }/>
+      </div>
+    )
   }
 }
 

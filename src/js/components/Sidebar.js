@@ -28,7 +28,7 @@ export default class Sidebar extends Component {
         <div id="navbar">
           <div id="offcanvas-left" className={this.state.showHideSidebar}>
             {/* Add navbar components here */}
-            <EventList />
+            <EventList events={ this.props.events }/>
           </div>
           <div className="togglebar">
               <div className="toggle" onClick={this.toggleNavbar}>

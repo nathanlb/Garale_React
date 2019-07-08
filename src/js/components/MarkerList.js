@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Map, {Marker, GoogleApiWrapper} from 'google-maps-react'
-import Events from '../../../sampledata/sampledata'
 
 class MarkerList extends Component {
 
@@ -16,8 +15,6 @@ class MarkerList extends Component {
     this.state = {
       update: true
     }
-
-    this.getEvents = this.getEvents.bind(this)
   }
 
   shouldComponentUpdate(nextProps) {
@@ -28,18 +25,15 @@ class MarkerList extends Component {
     this.setState( {update: false} )
   }
 
-  getEvents() {
-    return Events
-  }
-
   render() {
-    const events = this.getEvents()
+    const events = this.props.events
     return (
       events.map( (event, index) =>
         <Marker
           key = { index }
           name = { event.title }
           position = { event.coord }
+          event = { event }
           icon = {{
             url: this.icons[event.category],
             scaledSize: new google.maps.Size(35, 50),
