@@ -54,14 +54,15 @@
     color: var(--second-color);
 }
 #offcanvas-left ul {
-    padding: 0
+    padding: 0;
+    margin: 0px; 
 }
 #offcanvas-left ul li{
     color: white;
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
-    padding: 10px; 
+    padding: 10px;
     border-bottom: 1px solid #222
 }
 #offcanvas-left a{

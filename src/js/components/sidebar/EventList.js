@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 import EventCard from './EventCard'
 
-import '../../css/EventList.css'
+import '../../../css/EventList.css'
 
 export default class EventList extends Component {
   

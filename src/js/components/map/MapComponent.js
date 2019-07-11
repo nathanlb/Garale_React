@@ -3,9 +3,9 @@ import Map, {Marker, GoogleApiWrapper} from 'google-maps-react'
 
 import MarkerList from './MarkerList'
 import MapSearchBox from './MapSearchBox'
-import Keys from '../secret'
-import mapStyles from '../../json/mapStyles'
 import MarkerInfoWindow from './MarkerInfoWindow';
+import Keys from '../../secret'
+import mapStyles from '../../../json/mapStyles'
 
 export class MapComponent extends Component {
 
@@ -27,6 +27,7 @@ export class MapComponent extends Component {
 
     // Conditional components
     this.newMarker = this.newMarker.bind(this)
+    this.markerInfoWindow = this.markerInfoWindow.bind(this)
   }
 
   componentDidMount() {
@@ -44,7 +45,10 @@ export class MapComponent extends Component {
     this.positionNewMarker(position)
   }
 
-  onMarkerClick = (marker, e) => {
+  onMarkerClick = (marker) => {
+    this.setState({
+      showInfoWindow: false,
+    })
     this.setState({
       activeMarker: marker,
       showInfoWindow: true,
@@ -70,6 +74,18 @@ export class MapComponent extends Component {
           position = { this.state.newMarker }
           animation = { this.props.google.maps.Animation.DROP }
           draggable = { true }
+        />)
+    }
+  }
+
+  markerInfoWindow = () => {
+    const {activeMarker, showInfoWindow} = this.state
+    if (activeMarker && showInfoWindow){
+      return(
+        <MarkerInfoWindow 
+          marker={ this.state.activeMarker }
+          visible={ this.state.showInfoWindow }
+          google={ this.props.google }
         />)
     }
   }
@@ -104,9 +120,9 @@ export class MapComponent extends Component {
           streetViewControl={ false }
           fullscreenControl={ false }
           styles={ mapStyles }>
+          <MarkerList events={ this.props.events} onClick={ this.onMarkerClick }/>
           { this.newMarker() }
-          <MarkerList google={ this.props.google } events={ this.props.events} onClick={ this.onMarkerClick }/>
-          <MarkerInfoWindow marker={ this.activeMarker } visible={ this.showInfoWindow } selectedEvent={ this.props.selectedEvent }/>
+          { this.markerInfoWindow() }
         </Map>
       </div>
     )
@@ -116,5 +132,3 @@ export class MapComponent extends Component {
 export default GoogleApiWrapper({
   apiKey:Keys.MapsAPIKey
 })(MapComponent);
-
-//apiKey:Keys.GoogleAPIKey

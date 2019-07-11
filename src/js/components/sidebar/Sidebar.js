@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import EventList from './EventList'
-import '../../css/Sidebar.css'
+import '../../../css/Sidebar.css'
 
 export default class Sidebar extends Component {
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Map, {Marker, GoogleApiWrapper, InfoWindow} from 'google-maps-react'
+import {InfoWindow} from 'google-maps-react'
 
 export default class MarkerInfoWindow extends Component {
 
@@ -8,12 +8,12 @@ export default class MarkerInfoWindow extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <InfoWindow
-        marker={this.props.marker}
-        visible={this.props.visible}>
+        {...this.props}>
         <div>
-          <h1>Marker Info Window</h1>
+          <h1>{ 'this.props.marker.name' }</h1>
         </div>
       </InfoWindow>
     )

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import '../../css/EventCard.css'
+import '../../../css/EventCard.css'
 
 export default class EventCard extends Component {
 

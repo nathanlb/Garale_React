@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import PinCard from './components/PinCard'
-import MapComponent from './components/MapComponent'
-import Sidebar from './components/Sidebar'
-import EventFetcher from './components/EventFetcher';
+import MapComponent from './components/map/MapComponent'
+import Sidebar from './components/sidebar/Sidebar'
+import EventFetcher from './components/api/EventFetcher';
 
 class App extends Component {
 

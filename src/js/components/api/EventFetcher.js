@@ -1,5 +1,5 @@
 import React from 'react'
-import Events from '../../../sampledata/sampledata'
+import Events from '../../../../sampledata/sampledata'
 
 export default class EventFetcher {
 

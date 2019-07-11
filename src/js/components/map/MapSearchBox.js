@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import '../../css/MapSearchBox.css'
+import '../../../css/MapSearchBox.css'
 
 export default class MapSearchBox extends Component {
 
