@@ -12,8 +12,6 @@ export default class EventCard extends Component {
       "Entertainment": '#52c3f4',
       "Food&Drink": "#fdd501",
     }
-
-    this.readableTimestamp = this.readableTimestamp.bind(this)
   }
 
   readableTimestamp = (ts) => {

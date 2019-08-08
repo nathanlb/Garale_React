@@ -7,32 +7,41 @@ export default class Sidebar extends Component {
 
   constructor(){
     super()
-    this.state = {
-      "showHideSidebar"  : "hide"
-    }
-
-    this.toggleNavbar = this.toggleSidebar.bind(this)
   }
 
-  toggleSidebar() {
-    const css = (this.state.showHideSidebar === "hide") ? "" : "hide"
-    this.setState({"showHideSidebar":css})
-    
-    const state = (css === "hide") ? false : true
-    this.props.setSidebarState(state)
+  toggleSidebar = () => {
+    const state = !this.props.appState.sideBarOpen
+    this.props.setAppState({sideBarOpen: state})
+  }
+
+  toggleLoginModal = () => {
+    const state = !this.props.appState.loginModalOpen
+    this.props.setAppState({loginModalOpen: state})
+  }
+
+  showHideSidebar = () => {
+    const visible = this.props.appState.sideBarOpen
+    if (!visible){
+      return({
+        marginLeft: '-550px'
+      })
+    }
   }
 
   render() {
     return (
       <div id="nav-container">
         <div id="navbar">
-          <div id="offcanvas-left" className={this.state.showHideSidebar}>
+          <div id="offcanvas-left" style={this.showHideSidebar()}>
             {/* Add navbar components here */}
             <EventList events={ this.props.events }/>
           </div>
           <div className="togglebar">
-              <div className="toggle" onClick={this.toggleNavbar}>
+              <div className="toggle" onClick={this.toggleSidebar}>
                   <i className="fa fa-bars"></i>
+              </div>
+              <div className="toggle" onClick={this.toggleLoginModal}>
+                  <i className="far fa-user"></i>
               </div>
           </div>
         </div>

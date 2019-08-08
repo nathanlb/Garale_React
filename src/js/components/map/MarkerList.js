@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Marker, InfoWindow} from 'google-maps-react'
+import {Marker} from 'google-maps-react'
 
 export default class MarkerList extends Component {
 

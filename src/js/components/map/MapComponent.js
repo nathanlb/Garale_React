@@ -18,16 +18,6 @@ export class MapComponent extends Component {
       activeMarker: {},
       showInfoWindow: false,
     }
-
-    this.addMarker = this.addMarker.bind(this)
-    this.updateCenter = this.updateCenter.bind(this)
-    this.positionNewMarker = this.positionNewMarker.bind(this)
-    this.onMarkerClick = this.onMarkerClick.bind(this)
-    this.onMapClicked = this.onMapClicked.bind(this)
-
-    // Conditional components
-    this.newMarker = this.newMarker.bind(this)
-    this.markerInfoWindow = this.markerInfoWindow.bind(this)
   }
 
   componentDidMount() {
@@ -120,7 +110,7 @@ export class MapComponent extends Component {
           streetViewControl={ false }
           fullscreenControl={ false }
           styles={ mapStyles }>
-          <MarkerList events={ this.props.events} onClick={ this.onMarkerClick }/>
+          <MarkerList events={ this.props.events } onClick={ this.onMarkerClick }/>
           { this.newMarker() }
           { this.markerInfoWindow() }
         </Map>

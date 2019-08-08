@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import MapComponent from './components/map/MapComponent'
 import Sidebar from './components/sidebar/Sidebar'
-import EventFetcher from './components/api/EventFetcher';
+import EventFetcher from './components/api/EventFetcher'
+import ModalComponent from './components/modal/ModalComponent'
 
 class App extends Component {
 
@@ -10,17 +11,18 @@ class App extends Component {
 
     this.state = {
       sideBarOpen: false,
+      loginModalOpen: false,
       events: [],
       selectedEvent: null,
     }
 
     this.eventFetcher = new EventFetcher()
-    this.setAppState = this.setAppState.bind(this)
   }
 
-  setSidebarState = (state) => { this.setState( { sideBarOpen: state } )}
+  setSidebarState = (state) => { this.setState({ sideBarOpen: state }) }
+  setLoginModalState = (state) => { this.setState({ loginModalOpen: state}) }
 
-  componentDidMount = () => this.setState( {events: this.eventFetcher.getEvents()} )
+  componentDidMount = () => this.setState({ events: this.eventFetcher.getEvents() })
 
   setAppState = (stateChange) => this.setState(stateChange)
 
@@ -32,9 +34,11 @@ class App extends Component {
           width: '100%',
           top: '0px',
           position: 'absolute',
+          overflow: 'hidden'
         }}>
-        <Sidebar sideBarOpen={ this.state.sideBarOpen } setSidebarState={ this.setSidebarState } events={ this.state.events } setAppState={ this.setAppState }/>
+        <Sidebar visible={this.state.sideBarOpen} events={ this.state.events } appState={this.state} setAppState={ this.setAppState }/>
         <MapComponent sideBarOpen={ this.state.sideBarOpen } events={ this.state.events } setAppState={ this.setAppState } selectedEvent={ this.state.selectedEvent }/>
+        <ModalComponent visible={this.state.loginModalOpen}></ModalComponent>
       </div>
     )
   }

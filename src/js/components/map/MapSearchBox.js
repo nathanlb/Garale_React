@@ -6,8 +6,6 @@ export default class MapSearchBox extends Component {
 
   constructor(){
     super()
-
-    this.showHideSearchBox = this.showHideSearchBox.bind(this)
   }
 
   onPlacesChanged = () => {
@@ -25,18 +23,17 @@ export default class MapSearchBox extends Component {
     this.searchBox.removeListener('places_changed', this.onPlacesChanged);
   }
 
-  showHideSearchBox() {
+  showHideSearchBox = () => {
     if (this.props.sideBarOpen){
       return ({ visibility: "hidden",
-                opacity: "0",
-                transition: "visibility 0s 0.2s, opacity 0.2s linear"})
+                opacity: "0",})
     }
   }
 
   render() {
     return (
       <div id="places-search-wrapper" style={this.showHideSearchBox()}>
-        <input id="places-search" ref="input" {...this.props} type="text"/>
+        <input id="places-search" ref="input" type="text"/>
       </div>
     )
   }
