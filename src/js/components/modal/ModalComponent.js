@@ -6,24 +6,39 @@ export default class Modal extends Component{
 
   constructor() {
     super()
+    this.state = {
+      style : {
+        visibility: "hidden",
+        opacity: "0",
+      }
+    }
   }
 
   showHideModal = () => {
     if (!this.props.visible){
       return({
-        visibility: "hidden",
-        opacity: "0",
+        
       })
     }
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        style : {
+          visibility: "visible",
+          opacity: "1",
+        }
+      })
+    }, 0)
+  }
+
   render(){
+    const {style} = this.state
     return(
       <div>
-        <div id="modal-wrapper" style={this.showHideModal()}>
-          {/*this.props.contents*/}
-          <div style={{height: '500px', width: '400px', backgroundColor: 'purple'}}></div>
-
+        <div id="modal-wrapper" style={style}>
+          {this.props.content}
         </div>
       </div>
     )

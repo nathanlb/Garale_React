@@ -1,0 +1,36 @@
+.login-form-container {
+  text-align: center;
+  color: white;
+}
+
+.login-form-container * {
+  margin-top: 10px;
+}
+
+h2 {
+  padding-top: 40px;
+  color: white;
+  text-align: center;
+}
+
+input[type=text] {
+  width: 80%;
+}
+
+button {
+  background-color: white;
+  width: 50%;
+  border: none;
+  color: #232323;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-button {
+  text-align: center;
+  background-color: white;
+  height: 30px;
+  width: 50%;
+  border-radius: 10%;
+}

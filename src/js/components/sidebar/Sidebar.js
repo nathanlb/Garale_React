@@ -38,7 +38,7 @@ export default class Sidebar extends Component {
           </div>
           <div className="togglebar">
               <div className="toggle" onClick={this.toggleSidebar}>
-                  <i className="fa fa-bars"></i>
+                  <i className="fa fa-bars" style={{marginBottom: '20px'}}></i>
               </div>
               <div className="toggle" onClick={this.toggleLoginModal}>
                   <i className="far fa-user"></i>
