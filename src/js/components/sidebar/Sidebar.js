@@ -15,8 +15,10 @@ export default class Sidebar extends Component {
   }
 
   toggleLoginModal = () => {
-    const state = !this.props.appState.loginModalOpen
-    this.props.setAppState({loginModalOpen: state})
+    const modal = this.props.appState.modal
+    if (!modal.open){
+      this.props.setAppState({modal: {open: true, type: 'login'}})
+    }
   }
 
   showHideSidebar = () => {

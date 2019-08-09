@@ -3,21 +3,25 @@
   color: white;
 }
 
-.login-form-container * {
-  margin-top: 10px;
+.login-form-container h2 input {
+  padding-top: 10px;
 }
 
 h2 {
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   color: white;
   text-align: center;
+  font-size: 2.1em;
 }
 
 input[type=text] {
   width: 80%;
+  margin-top: 8px;
+  padding-left: 8px;
 }
 
-button {
+.submit-button {
   background-color: white;
   width: 50%;
   border: none;
@@ -25,12 +29,18 @@ button {
   text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 8px;
+  font-weight: bold;
 }
 
-.submit-button {
-  text-align: center;
-  background-color: white;
-  height: 30px;
-  width: 50%;
-  border-radius: 10%;
+a:link {
+  color: #f4427a;
 }
+a:visited {
+  color: #02d185;
+}
+a:hover {
+  color: #f4e767;
+  text-decoration: none;
+}
+

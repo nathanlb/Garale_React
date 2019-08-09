@@ -14,12 +14,14 @@ export default class Modal extends Component{
     }
   }
 
-  showHideModal = () => {
-    if (!this.props.visible){
-      return({
-        
-      })
-    }
+  closeModal = () => {
+    this.setState({
+      style : {
+        visibility: "hidden",
+        opacity: "0",
+      }
+    })
+    this.props.setAppState({modal: {open: false, type: null}})
   }
 
   componentDidMount() {
@@ -27,7 +29,7 @@ export default class Modal extends Component{
       this.setState({
         style : {
           visibility: "visible",
-          opacity: "1",
+          opacity: ".9",
         }
       })
     }, 0)
@@ -38,7 +40,10 @@ export default class Modal extends Component{
     return(
       <div>
         <div id="modal-wrapper" style={style}>
-          {this.props.content}
+          <i className="fas fa-times" onClick={this.closeModal}></i>
+          <div id="content-wrapper">
+            {this.props.content}
+          </div>
         </div>
       </div>
     )

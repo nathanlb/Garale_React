@@ -1,3 +1,5 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+
 #modal-wrapper {
   position: absolute;
   float: left;
@@ -10,5 +12,22 @@
   background-color: #232323;
   padding: 20px;
   border-radius: 5px;
+}
+
+#modal-wrapper #content-wrapper {
+  padding-top: 20px;
+}
+
+#modal-wrapper i {
+  float: right;
+  font-size: 1.2em;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+#modal-wrapper i:hover {
+  color: #fdd501;
 }
 

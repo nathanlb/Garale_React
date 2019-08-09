@@ -12,6 +12,10 @@ class App extends Component {
 
     this.state = {
       sideBarOpen: false,
+      modal: {
+        open: false,
+        type: null,
+      },
       loginModalOpen: false,
       events: [],
       selectedEvent: null,
@@ -28,10 +32,12 @@ class App extends Component {
   setAppState = (stateChange) => this.setState(stateChange)
 
   loginModal = () => {
-    const {loginModalOpen} = this.state
-    if (loginModalOpen) {
-      const loginForm = <LoginForm />
-      return <ModalComponent visible={loginModalOpen} content={loginForm} />
+    const {modal} = this.state
+    if (modal.open){
+      if (modal.type==='login') {
+        const loginForm = <LoginForm />
+        return <ModalComponent visible={modal.open} content={loginForm} setAppState={this.setAppState}/>
+      }
     }
   }
 

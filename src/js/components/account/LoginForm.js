@@ -10,17 +10,17 @@ export default class LoginForm extends Component{
 
   render(){
     return(
-      <div className='login-form-container' style={{height: '300px', width: '400px', backgroundColor: '#393939'}}>
+      <div className='login-form-container' style={{height: '300px', width: '400px'}}>
         <h2>Log In</h2>
         <input type='text' placeholder='Username'></input>
         <br/>
         <input type='text' placeholder='Password'></input>
         <br/>
-        <a href="">Forgot your username/password?</a>
+        <a href="google.ca">Forgot your username/password?</a>
         <br/>
-        <button type='submit'>Continue</button>
+        <button type='submit' className='submit-button'>Continue</button>
         <br/>
-        Not registered? <a href=''>Sign up!</a>
+        Not registered? <a href='google.ca'>Sign up!</a>
       </div>
     )
   }
