@@ -1,9 +1,9 @@
-.login-form-container {
+.signup-form-container {
   text-align: center;
   color: white;
 }
 
-.login-form-container h2 input {
+.signup-form-container h2 input {
   padding-top: 10px;
 }
 
@@ -16,20 +16,10 @@ h2 {
   margin-bottom: 0px;
 }
 
-input[type=text], input[type=password]{
+input[type=text], input[type=email], input[type=password] {
   width: 80%;
-  margin-top: 10px;
+  margin-top: 13px;
   padding-left: 8px;
-}
-
-.text-button {
-  background: none;
-  border: none;
-  color: #f4427a;
-}
-
-.text-button:hover {
-  color: #f4e767;
 }
 
 .submit-button {
@@ -38,10 +28,10 @@ input[type=text], input[type=password]{
   border: none;
   color: #232323;
   text-decoration: none;
-  border-radius: 8px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 25px;
   font-weight: bold;
 }
 
@@ -55,8 +45,3 @@ a:hover {
   color: #f4e767;
   text-decoration: none;
 }
-
-button:focus {
-  outline:0;
-}
-

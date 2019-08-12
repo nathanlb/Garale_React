@@ -8,19 +8,28 @@ export default class LoginForm extends Component{
     super()
   }
 
+  handleSignupClick = () => {
+    const modal = this.props.appState.modal
+    if (modal.open){
+      this.props.setAppState({modal: {open: true, type: 'signup'}})
+    }
+  }
+
   render(){
     return(
       <div className='login-form-container' style={{height: '300px', width: '400px'}}>
+        <form>
         <h2>Log In</h2>
         <input type='text' placeholder='Username'></input>
         <br/>
-        <input type='text' placeholder='Password'></input>
+        <input type='password' placeholder='Password'></input>
         <br/>
-        <a href="google.ca">Forgot your username/password?</a>
+        <button className='text-button'>Forgot your username/password?</button>
         <br/>
         <button type='submit' className='submit-button'>Continue</button>
         <br/>
-        Not registered? <a href='google.ca'>Sign up!</a>
+        Not registered? <button className='text-button' onClick={this.handleSignupClick}>Sign up!</button>
+        </form>
       </div>
     )
   }

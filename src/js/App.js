@@ -3,7 +3,8 @@ import MapComponent from './components/map/MapComponent'
 import Sidebar from './components/sidebar/Sidebar'
 import EventFetcher from './components/api/EventFetcher'
 import ModalComponent from './components/modal/ModalComponent'
-import LoginForm from './components/account/LoginForm';
+import LoginForm from './components/account/LoginForm'
+import SignupForm from './components/account/SignupForm'
 
 class App extends Component {
 
@@ -34,9 +35,13 @@ class App extends Component {
   loginModal = () => {
     const {modal} = this.state
     if (modal.open){
-      if (modal.type==='login') {
-        const loginForm = <LoginForm />
-        return <ModalComponent visible={modal.open} content={loginForm} setAppState={this.setAppState}/>
+      switch(modal.type){
+        case 'login':
+            const loginForm = <LoginForm appState={this.state} setAppState={this.setAppState}/>
+            return <ModalComponent visible={modal.open} content={loginForm} appState={this.state} setAppState={this.setAppState}/>
+        case 'signup':
+            const signupForm = <SignupForm appState={this.state} setAppState={this.setAppState}/>
+            return <ModalComponent visible={modal.open} content={signupForm} appState={this.state} setAppState={this.setAppState}/>
       }
     }
   }

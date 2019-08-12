@@ -1,0 +1,9 @@
+#event-filter-container{
+  height: 50px;
+  width: 514px;
+  margin: 10px;
+}
+
+input[type=checkbox] {
+  margin-left: 10px;
+}

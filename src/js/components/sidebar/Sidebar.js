@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
 
-import EventList from './EventList'
 import '../../../css/Sidebar.css'
+
+import EventList from './EventList'
+import EventFetcherSearch from './EventFilterSearch'
+import EventFilterForm from './EventFilterForm';
 
 export default class Sidebar extends Component {
 
@@ -35,12 +38,13 @@ export default class Sidebar extends Component {
       <div id="nav-container">
         <div id="navbar">
           <div id="offcanvas-left" style={this.showHideSidebar()}>
-            {/* Add navbar components here */}
+            <EventFetcherSearch />
+            <EventFilterForm />
             <EventList events={ this.props.events }/>
           </div>
           <div className="togglebar">
               <div className="toggle" onClick={this.toggleSidebar}>
-                  <i className="fa fa-bars" style={{marginBottom: '20px'}}></i>
+                  <i className="fa fa-bars" style={{borderBottom: '1px solid rgb(255, 255, 255, 0.3)'}}></i>
               </div>
               <div className="toggle" onClick={this.toggleLoginModal}>
                   <i className="far fa-user"></i>

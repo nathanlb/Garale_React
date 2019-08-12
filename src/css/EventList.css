@@ -1,3 +1,8 @@
+.event-list-container{
+  height: calc(100% - 45px);
+  overflow-y: auto;
+}
+
 .event-list{
   max-height: 100%;
   overflow-y: auto;
