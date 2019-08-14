@@ -8,11 +8,10 @@ export default class MarkerInfoWindow extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <InfoWindow
         {...this.props}>
-        <div>
+        <div style={{height: '50px', width: '100px'}}>
           <h1>{ 'this.props.marker.name' }</h1>
         </div>
       </InfoWindow>

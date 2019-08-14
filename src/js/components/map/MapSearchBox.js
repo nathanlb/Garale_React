@@ -13,7 +13,6 @@ export default class MapSearchBox extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.center)
     var input = this.refs.input;
     this.searchBox = new this.props.google.maps.places.SearchBox(input);
     this.searchBox.addListener('places_changed', this.onPlacesChanged);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Marker} from 'google-maps-react'
+import * as ArrayUtils from '../../utils/ArrayUtils'
 
 export default class MarkerList extends Component {
 
@@ -16,13 +17,13 @@ export default class MarkerList extends Component {
       update: true
     }
   }
-
+  
   shouldComponentUpdate(nextProps) {
     if (this.state.update === true){
       return true
     }
     else{
-      return nextProps.events !== this.props.events
+      return !ArrayUtils.compare(nextProps.events, this.props.events)
     }
   }
 
