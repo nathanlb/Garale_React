@@ -86,7 +86,7 @@ export default [
         start: "2019-06-01T14:00:00",
         end: "2019-06-10T22:00:00",
         coord: {"lat": 45.4994618, "lng": -73.5716746},
-        category: "Food&Drink",
+        category: "FoodnDrink",
         photo: "../../../sampledata/img/oap.jpg"
     },
     {
@@ -95,7 +95,7 @@ export default [
         start: "2019-06-01T14:00:00",
         end: "2019-06-01T22:00:00",
         coord: {"lat": 45.4875488, "lng": -73.5737345},
-        category: "Food&Drink",
+        category: "FoodnDrink",
         photo: "../../../sampledata/img/foodtruck.jpg"
     }
 ]

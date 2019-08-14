@@ -10,7 +10,7 @@ export default class EventCard extends Component {
       "Environmental": "#67d414",
       "Culture": "#46648f",
       "Entertainment": '#52c3f4',
-      "Food&Drink": "#fdd501",
+      "FoodnDrink": "#fdd501",
     }
   }
 

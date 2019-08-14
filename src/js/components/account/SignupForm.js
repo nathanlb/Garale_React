@@ -19,7 +19,7 @@ export default class SignupForm extends Component{
         <br/>
         <input type='text' placeholder='Username' required></input>
         <br/>
-        <input type='password' placeholder='Password' minlength='8' required></input>
+        <input type='password' placeholder='Password' minLength='8' required></input>
         <br/>
         <input type='email' placeholder='Email' required></input>
         <br/>

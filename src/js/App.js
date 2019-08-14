@@ -17,18 +17,15 @@ class App extends Component {
         open: false,
         type: null,
       },
-      loginModalOpen: false,
-      events: [],
       selectedEvent: null,
+      filters: {
+        categories: [],
+        searchString: "",
+      }
     }
-
+    this.events = []
     this.eventFetcher = new EventFetcher()
   }
-
-  setSidebarState = (state) => { this.setState({ sideBarOpen: state }) }
-  setLoginModalState = (state) => { this.setState({ loginModalOpen: state}) }
-
-  componentDidMount = () => this.setState({ events: this.eventFetcher.getEvents() })
 
   setAppState = (stateChange) => this.setState(stateChange)
 
@@ -37,16 +34,18 @@ class App extends Component {
     if (modal.open){
       switch(modal.type){
         case 'login':
-            const loginForm = <LoginForm appState={this.state} setAppState={this.setAppState}/>
-            return <ModalComponent visible={modal.open} content={loginForm} appState={this.state} setAppState={this.setAppState}/>
+          const loginForm = <LoginForm appState={this.state} setAppState={this.setAppState}/>
+          return <ModalComponent visible={modal.open} content={loginForm} appState={this.state} setAppState={this.setAppState}/>
         case 'signup':
-            const signupForm = <SignupForm appState={this.state} setAppState={this.setAppState}/>
-            return <ModalComponent visible={modal.open} content={signupForm} appState={this.state} setAppState={this.setAppState}/>
+          const signupForm = <SignupForm appState={this.state} setAppState={this.setAppState}/>
+          return <ModalComponent visible={modal.open} content={signupForm} appState={this.state} setAppState={this.setAppState}/>
       }
     }
   }
 
   render() {
+    const filters = this.state.filters
+    this.events = this.eventFetcher.getEvents(filters)
     return (
       <div
         style={{
@@ -56,8 +55,8 @@ class App extends Component {
           position: 'absolute',
           overflow: 'hidden'
         }}>
-        <Sidebar visible={this.state.sideBarOpen} events={ this.state.events } appState={this.state} setAppState={ this.setAppState }/>
-        <MapComponent sideBarOpen={ this.state.sideBarOpen } events={ this.state.events } setAppState={ this.setAppState } selectedEvent={ this.state.selectedEvent }/>
+        <Sidebar visible={this.state.sideBarOpen} events={ this.events } appState={this.state} setAppState={ this.setAppState }/>
+        <MapComponent sideBarOpen={ this.state.sideBarOpen } events={ this.events } setAppState={ this.setAppState } selectedEvent={ this.state.selectedEvent }/>
         { this.loginModal() }
       </div>
     )

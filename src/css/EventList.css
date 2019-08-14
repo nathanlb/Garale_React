@@ -1,5 +1,5 @@
 .event-list-container{
-  height: calc(100% - 45px);
+  height: calc(100% - 95px);
   overflow-y: auto;
 }
 

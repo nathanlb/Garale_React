@@ -8,7 +8,7 @@ export default class MarkerList extends Component {
     this.icons = {
       "Fitness": "../../../../img/fitness_pin.png",
       "Environmental": "../../../../img/eco_pin.png",
-      "Food&Drink": "../../../../img/drinks_pin.png",
+      "FoodnDrink": "../../../../img/drinks_pin.png",
       "Entertainment": "../../../../img/entertainment_pin.png",
       "Culture": "../../../../img/culture_pin.png"
     }
@@ -18,7 +18,12 @@ export default class MarkerList extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.state.update
+    if (this.state.update === true){
+      return true
+    }
+    else{
+      return nextProps.events !== this.props.events
+    }
   }
 
   componentDidMount() {

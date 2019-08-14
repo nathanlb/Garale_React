@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import '../../../css/Sidebar.css'
 
 import EventList from './EventList'
-import EventFetcherSearch from './EventFilterSearch'
+import EventFilterSearch from './EventFilterSearch'
 import EventFilterForm from './EventFilterForm';
 
 export default class Sidebar extends Component {
@@ -38,8 +38,8 @@ export default class Sidebar extends Component {
       <div id="nav-container">
         <div id="navbar">
           <div id="offcanvas-left" style={this.showHideSidebar()}>
-            <EventFetcherSearch />
-            <EventFilterForm />
+            <EventFilterSearch appState={this.props.appState} setAppState={this.props.setAppState} />
+            <EventFilterForm appState={this.props.appState} setAppState={this.props.setAppState} />
             <EventList events={ this.props.events }/>
           </div>
           <div className="togglebar">
