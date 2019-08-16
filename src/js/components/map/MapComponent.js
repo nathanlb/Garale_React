@@ -7,6 +7,8 @@ import MarkerInfoWindow from './MarkerInfoWindow';
 import Keys from '../../secret'
 import mapStyles from '../../../json/mapStyles'
 
+import '../../../css/MapComponent.css'
+
 export class MapComponent extends Component {
 
   constructor() {
@@ -73,26 +75,14 @@ export class MapComponent extends Component {
     if (activeMarker && showInfoWindow){
       return(
         <MarkerInfoWindow 
-          marker={ this.state.activeMarker }
-          visible={ this.state.showInfoWindow }
-          google={ this.props.google }
-        />)
+          marker={ activeMarker }
+          visible={ showInfoWindow }/>)
     }
   }
 
   render() {
     return (
-      <div
-        style={{
-          position: 'absolute',
-          height: '100%',
-          width: '100%',
-          left: '0px',
-          top: '0px',
-          float: 'right',
-          zIndex: 1,
-          overflowY: 'none',
-        }}>
+      <div id='map-component-container'>
         <MapSearchBox 
           google={ this.props.google }
           updatecenter={ this.updateCenter }

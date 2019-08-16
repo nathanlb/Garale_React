@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Marker} from 'google-maps-react'
-import * as ArrayUtils from '../../utils/ArrayUtils'
+//import * as ArrayUtils from '../../utils/ArrayUtils'
 
 export default class MarkerList extends Component {
 
@@ -23,7 +23,7 @@ export default class MarkerList extends Component {
       return true
     }
     else{
-      return !ArrayUtils.compare(nextProps.events, this.props.events)
+      return true //!ArrayUtils.compare(nextProps.events, this.props.events)
     }
   }
 
